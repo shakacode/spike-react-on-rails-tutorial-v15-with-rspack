@@ -4,6 +4,6 @@
   <%= link_to "Markdown Editor (Heavy Bundle)", markdown_editor_path %>
 </nav>
 
-<h1>Hello World</h1>
-<p>This is a simple React component demonstrating auto-registration and server-side rendering.</p>
-<%= react_component("HelloWorld", props: @hello_world_props, prerender: true) %>
+<h1>Heavy Markdown Editor</h1>
+<p>This component demonstrates bundle splitting with a large markdown editor library.</p>
+<%= react_component("HeavyMarkdownEditor", props: @markdown_editor_props, prerender: false) %>
