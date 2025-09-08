@@ -1,0 +1,75 @@
+.editorContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.info {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.info h3 {
+  color: #495057;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.info p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.info ul {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.info li {
+  margin-bottom: 5px;
+}
+
+.info code {
+  background-color: #f1f3f4;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+}
+
+.editor {
+  margin-bottom: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.preview {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.preview h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #6c757d;
+}
+
+/* Override some default markdown editor styles for better integration */
+.editor .w-md-editor {
+  background-color: #ffffff;
+}
+
+.editor .w-md-editor-text-container {
+  font-size: 14px;
+}
+
+.editor .w-md-editor-text {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+}
