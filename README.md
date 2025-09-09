@@ -1,23 +1,56 @@
-# React on Rails v15 Tutorial
+# React on Rails Demo: SSR, Auto-Registration & Bundle Splitting with v15 and Rails 8
 
-A comprehensive tutorial application demonstrating React on Rails v15 features including auto-registration, server-side rendering, and bundle splitting.
+A fully working demo of React on Rails v15 on Rails 8, showcasing server-side rendering, auto-registration, and bundle splitting capabilities.
+
+✅ **Includes:**
+- **Server-Side Rendering (SSR)** - React components render on the server for faster initial page loads
+- **Auto-Registration** - Components in `app/javascript/packs/ror_components/` are automatically discovered and registered
+- **Bundle Splitting** - Automatic code splitting for optimized loading performance
+- **CSS Modules** - Scoped CSS with automatic class name generation
+- **Multiple Dev Modes** - HMR, static, and production-like development servers
+- **Rails 8 Integration** - Latest Rails version with modern asset pipeline
+
+📂 **Repo name:** `react_on_rails-demo-v15-ssr-auto-registration-bundle-splitting`
+
+📚 **Part of the** [React on Rails Demo Series](https://github.com/shakacode?tab=repositories&q=react_on_rails-demo)
 
 ## 🚀 Quick Start
 
 ```bash
 # Install dependencies
-bundle && npm install
+bundle && yarn
 
-# Run development server (HMR mode)
+# Generate auto-registration files
+bundle exec rake react_on_rails:generate_packs
+
+# Start development server
 ./bin/dev
-
-# Alternative development modes:
-./bin/dev static    # Static development (no HMR, no FOUC)
-./bin/dev prod      # Production-like assets
-./bin/dev help      # Show all options
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) to see the app!
+Visit http://localhost:3000 to see the demo in action.
+
+## ⚠️ Important: Known Issue with Packs Generation
+
+There's a bug in the `react_on_rails:generate_packs` task with CSS modules (see [#1768](https://github.com/shakacode/react_on_rails/issues/1768)).
+
+**Problem**: The generator creates invalid JavaScript syntax when handling CSS modules:
+```javascript
+// ❌ Invalid (generated)
+import HelloWorld.module from '../ror_components/HelloWorld.module.css';
+ReactOnRails.register({HelloWorld, HelloWorld.module});
+```
+
+**Workaround**: After running the generator, manually fix the generated files by removing CSS module imports from the server bundle:
+
+```javascript
+// ✅ Fixed (manual)
+import ReactOnRails from 'react-on-rails';
+import HelloWorld from '../packs/ror_components/HelloWorld.jsx';
+
+ReactOnRails.register({HelloWorld});
+```
+
+This demo has been manually fixed to work correctly with SSR.
 
 ## 📖 What This Tutorial Demonstrates
 
