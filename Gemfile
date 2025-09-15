@@ -53,3 +53,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# gem "react_on_rails", "= 15.0"
+
+gem "react_on_rails", path: "../../react_on_rails"
