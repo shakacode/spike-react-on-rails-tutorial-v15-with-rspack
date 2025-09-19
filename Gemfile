@@ -57,3 +57,5 @@ end
 # gem "react_on_rails", "= 15.0"
 
 gem "react_on_rails", path: "../../react_on_rails"
+
+gem "shakapacker", "= 8.4"

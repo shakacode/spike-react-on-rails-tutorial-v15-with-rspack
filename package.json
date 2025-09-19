@@ -24,7 +24,10 @@
     "prop-types": "^15.8.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-on-rails": "file:.yalc/react-on-rails",
+    "react-on-rails": "^16.0.0",
+    "react-redux": "^9.2.0",
+    "redux": "^5.0.1",
+    "shakapacker": "8.4.0",
     "style-loader": "^4.0.0",
     "terser-webpack-plugin": "^5.3.14",
     "webpack": "^5.101.3",
@@ -34,8 +37,17 @@
     "webpack-subresource-integrity": "^5.1.0"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.27.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
     "react-refresh": "^0.17.0",
+    "typescript": "^5.9.2",
     "webpack-dev-server": "^5.2.2"
+  },
+  "babel": {
+    "presets": [
+      "./node_modules/shakapacker/package/babel/preset.js"
+    ]
   }
 }
