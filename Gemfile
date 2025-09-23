@@ -58,4 +58,4 @@ end
 
 gem "react_on_rails", path: "../../react_on_rails"
 
-gem "shakapacker", "= 8.4"
+gem "shakapacker", path: "/Users/justin/shakacode/shakapacker/shakapacker-popmenu"

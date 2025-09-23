@@ -3,6 +3,7 @@
 
 default: &default
   source_path: app/javascript
+  bundler: 'rspack'
 
   # You can have a subdirectory of the source_path, like 'packs' (recommended).
   # Alternatively, you can use '/' to use the whole source_path directory.
@@ -40,7 +41,7 @@ default: &default
   webpack_loader: 'babel'
 
   # Raises an error if there is a mismatch in the shakapacker gem and npm package being used
-  ensure_consistent_versioning: true
+  ensure_consistent_versioning: false
 
   # Select whether the compiler will use SHA digest ('digest' option) or most recent modified timestamp ('mtime') to determine freshness
   compiler_strategy: digest
